@@ -23,5 +23,6 @@
     <orderEntry type="library" name="javax.websocket-api-1.1" level="project" />
     <orderEntry type="library" name="apache-tomcat-9.0" level="project" />
     <orderEntry type="library" name="Maven: com.google.code.gson:gson:2.8.6" level="project" />
+    <orderEntry type="library" name="Maven: org.json:json:20090211" level="project" />
   </component>
 </module>
