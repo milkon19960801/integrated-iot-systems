@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="javafx" name="WebSocketWebProject">
+    <output-path>$PROJECT_DIR$/out/artifacts/WebSocketWebProject</output-path>
+    <root id="root">
+      <element id="archive" name="WebSocketWebProject.jar">
+        <element id="module-output" name="WebSocketWebProject" />
+      </element>
+    </root>
+  </artifact>
+</component>
