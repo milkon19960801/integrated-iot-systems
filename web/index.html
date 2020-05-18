@@ -2,40 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Chat</title>
+    <title>Systemintegration</title>
 </head>
 <body style="margin:0;">
 
-<textarea title="Chat Log" id="log" readonly
+<textarea title="Systemintegration Log" id="log" readonly
           style="display: block; width: 100%; height: 600px; resize: none; margin: 0;
           padding: 0; border: 0;"></textarea>
 
-<input title="Chat Input" id="input" type="text" style="display: block; width: 100%;
-        border-width: 1px 0 1px 0;"
-       autofocus/>
+
 
 <script>
 
     var ws = new WebSocket("ws://localhost:8080/WebSocketWebProject_war_exploded/ws");
+
+    ws.onopen = function (event) {
+        ws.send('Hello');
+    }
+
     ws.onmessage = function (event) {
-        console.log(event.data);
-        document.getElementById("log").value += "[" + timestamp() + "] " + event.data + "\n";
+
+        document.getElementById("log").value +=  event.data + "\n";
+        strEdit(event.data)
+
+    }
+    let id = 0;
+    function strEdit (data) {
+
+       const splitString =  data.split(',');
+        const customDate = new Date(splitString[1]).toString().replace('GMT+0200 (centraleuropeisk sommartid)','');
+
+        const dataObj = {};
+        let newObj = {...dataObj, temp:splitString[0],date:customDate};
+        console.log(newObj);
+
+
     }
 
-    document.getElementById("input").addEventListener("keyup", function (event) {
-
-        if (event.keyCode === 13) {
-            ws.send(event.target.value);
-            event.target.value = "";
-        }
-    });
-
-    function timestamp() {
-        var d = new Date(), minutes = d.getMinutes();
-        if (minutes < 10) minutes = '0' + minutes;
-        return d.getHours() + ':' + minutes;
-    }
 </script>
-
 </body>
 </html>
