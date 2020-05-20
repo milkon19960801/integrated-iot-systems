@@ -26,6 +26,8 @@ public class Controller {
             JSONArray jsonArr = new JSONArray(name);
 
 
+
+            
             for (int i = 0; i < jsonArr.length(); ++i) {
                 JSONObject rec = jsonArr.getJSONObject(i);
                  value1 = rec.optString("temperature");
