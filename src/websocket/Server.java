@@ -7,6 +7,8 @@ import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+
+
 @ServerEndpoint("/ws")
 public class Server {
 
@@ -28,7 +30,7 @@ public class Server {
             time= sb1.toString();
 
 
-            
+
             res =temp+time;
             return res;
 
