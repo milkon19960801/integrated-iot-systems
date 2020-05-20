@@ -75,12 +75,16 @@
         const dataObj = {};
         const newObj = {...dataObj, temp:splitString[0],date:customDate};//spread operator ...dataObj return new object with your added keys and values, save it in newObject variable
 
+
+        
+
+
         const temperature =  document.createElement('p'); // <p></p>
         temperature.innerHTML = newObj.temp +=" °C";  //<p>value</p>
         document.getElementById('first-cell').appendChild(temperature); // <div  id="first-cell" ><p>value</p></div>
 
 
-        
+
         const DateTime =  document.createElement('p')
         DateTime.innerHTML = newObj.date;
         document.getElementById('second-cell').appendChild(DateTime);
