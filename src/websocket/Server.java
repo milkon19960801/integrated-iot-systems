@@ -21,7 +21,7 @@ public class Server {
             msg = obj.toString();
 
 
-            
+
             temp = msg.substring(16,21);
             StringBuilder sb = new StringBuilder(temp);
             temp= sb.toString();
