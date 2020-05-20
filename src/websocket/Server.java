@@ -20,6 +20,8 @@ public class Server {
             Object obj = new String(in.readAllBytes());
             msg = obj.toString();
 
+
+            
             temp = msg.substring(16,21);
             StringBuilder sb = new StringBuilder(temp);
             temp= sb.toString();
